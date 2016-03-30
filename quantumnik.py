@@ -10,6 +10,12 @@ from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 
 try:
+    from PyQt4.QtCore import QString
+except ImportError:
+    # we are using Python3 so QString is not defined
+    QString = type("")
+
+try:
     import mapnik2 as mapnik
 except ImportError:
     import mapnik
